@@ -6,54 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maison</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css" type="text/css" media="all" />
     
  </head>
 
- <!-- landing animation -->
- <!-- <div class="landing">
-    <img class="landing-image" src="../images/M logo gold small.png"/>
-</div> -->
-
 <!-- website contents -->
  <body>
-    <!-- navigation bar -->
-    <nav  class="navbar">      
-        <img class = "maison-logo" src="./images/Maison logo gold.png" alt="Maison Logo"/>
-        <ul data-visibility = "hidden" class="nav--links">
-            <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a href="#">Menu</a>
-            </li>
-            <li>
-                <a href="#">Galerie</a>
-            </li>
-            <li>
-                <a href="#">Kontakt</a>
-            </li>
-        </ul>
+    <main class="grid-container">
+        <!-- navigation bar -->
+        <header class="header-stack">
+            
+            <nav  class="navbar">      
+                <span class="languages"> <a href="#">CZ</a> <a href="#">EN</a></span>
+                <a id = "logo" href="#"><img class = "maison-logo" src="./images-logo/Maison logo gold.png" alt="Maison Logo" href/></a>
+                <ul data-visibility = "hidden" class="nav--links">
+                    <li>
+                        <a href="#">Menu</a>
+                    </li>
+                    <li>
+                        <a href="#">Gallery</a>
+                    </li>
+                </ul>
 
-
-        <!-- onclick = "toggleNav()" -->
-        <div  class="nav--toggle"> 
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
+                <!-- onclick = "toggleNav()" -->
+                <div  class="nav--toggle"> 
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                
+            </nav>
+            <!-- video -->
+            <video class = "video-bg" poster="./images/temp image 1.jpg" autoplay muted loop>
+                <source src="./images/video.mp4" type="video/mp4">
+            </video>
+        </header>
         
-    </nav>
 
-    <!-- main body -->
-    <div class="container">
-        <h1>TEST</h1>
-    </div>
-     <!-- MENU toggle script -->
-        <script src="App.js"></script>   
+        <!-- main body -->
+        <div class="content-container">
+            <div class="grid-container">
+                <div class="div-images"id="img1"></div>
+                <div class="div-images"id="img2"></div>
+            </div>
+                
+            <div class="content-text">
+                <h1 class="headline-text">filler text</h1>           
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, voluptatem quasi labore ea voluptatum vero similique sapiente distinctio sint, nemo recusandae?</p>
+                <h1 class="headline-text">filler text</h1>         
+            </div>
+        </div>
+
+        <footer class="footer">
+            <h1>footer</h1>
+        </footer>
+        <!-- MENU toggle script -->
+            <script src="App.js"></script> 
+    </main>  
  </body>
  </html>

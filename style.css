@@ -1,3 +1,28 @@
+/* fonts */
+@font-face {
+    font-family: "Bigilla";
+    src: url(./fonts/Bigilla.otf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Bigilla";
+    src: url(./fonts/Bigilla-Bold.otf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Moniqa";
+    src: url(./fonts/Moniqa-BlackDisplay.otf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Moniqa";
+    src: url(./fonts/Moniqa-SemiBoldDisplay.otf);
+    font-weight: normal;
+}
+
 :root {
     /* colors */
     --main-color: #4b5320;
@@ -5,56 +30,103 @@
 
     /* burger/menu */
     --burger-width: 46px;
-    --burger-line-height: 2.4px;
+    --burger-line-height: 4px;
 }
 
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
 }
-
-/* landing animation */
-
-/* .landing-image{
-    z-index: 10000;
-    aspect-ratio: 1;
-    width: var(--M-logo-size);
-
-    position: fixed;
-    top:calc(50vh);
-    left:calc(50vw);
-    
-    background-color: rgba(75, 83, 32,.8);
-    box-shadow: 0 0 0px 100vmax rgba(75, 83, 32,.8);
-} */
 
 body {
     overflow-x: hidden;
+    background-color: var(--main-color);
 }
 
-
-/* maison logo */
-.maison-logo{
-    /* resizing to smaller image */
-    
-    width: auto;
-    height: max(10vh, 3.5rem);
+/* main grid container setting */
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10vh;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer";
 }
 
+/* header container includes navbar bg video and image */
+.header-stack{
+    grid-area: header;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* video background */
+.video-bg{
+    /* general */
+    z-index: -100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* aspect ratio for video */
+@media (min-aspect-ratio: 16/9){
+    .video-bg{
+        width: 100vw;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .video-bg{
+        width: auto;
+        height: 100%;
+    }
+}
+
+/* disable video bg on mobile  */
+@media only screen and (max-width: 767px) {
+    .video-bg{
+        display: none;
+    }
+    .header-stack{
+        background-image: linear-gradient(rgba(75, 83, 32, 0.5), rgba(75, 83, 32, 0.5)), url(../images/temp-image-1.jpg) ;
+        background-repeat: no-repeat;
+        background-position: center top;
+        object-fit: cover;
+    }
+}
 /* navbar styling */
 
 .navbar {
     /* general */
     z-index: 900;
-    padding: 3vh min(5vw, 3rem) 0;
-    border: 2px solid red;
+    background: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    min-height: 8vh;
+    justify-content: space-around;
+    padding-top: 2rem;
+    height: 15vh;
+    width: 100%;
 }
 
+/* maison logo */
+.maison-logo{
+    /* resizing to smaller image */
+    width: auto;
+    height: max(6rem, 8vw);
+}
+
+/* for phones */
 .nav--links{
     position: fixed;
     right: 0;
@@ -69,6 +141,81 @@ body {
     align-items: center;
     backdrop-filter: blur(1.5px);
     transition: all 0.5s ease;
+    overflow-x: hidden;
+}
+
+.languages > a{
+        text-decoration: none;
+        font-weight: 200;
+        color: var(--secondary-color);
+        margin-right: 0.5em;
+    }
+
+/* for pc screen navbar*/
+@media only screen and (min-width: 1275px) {
+    .navbar{
+        justify-content: unset;
+        position: relative;
+    }
+
+    .languages{
+        position: absolute;
+        left: 4rem;
+        top: 4rem;
+    }
+        
+   .maison-logo{
+        position: absolute;
+        left: 50%;
+        top:1.2rem;
+        transform: translateX(-50%);
+   }
+
+    .nav--links{
+        all: unset;
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        right: 15vw;
+        top: 4rem;
+        gap: 2em;
+    }
+   
+    .nav--toggle > div{
+        display: none;
+    }
+
+    /* hover effect */
+    .nav--links > li > a{
+        transition: 0.3s ease;
+    }
+
+    .nav--links > li > a:hover{
+        color: white;
+    } 
+
+    .languages > a{
+        transition: 0.3s ease;
+    }
+
+    .languages > a:hover{
+        color: white;
+    } 
+
+                        /* lines inbetween |*/
+    /* .nav--links > li:nth-child(1){
+        padding-right: 0.5em;
+        border-right: 1px solid var(--secondary-color);
+    }
+    .nav--links > li:nth-child(2){
+        padding-right: 0.5em;
+        border-right: 1px solid var(--secondary-color);
+    }
+    .nav--links > li:nth-child(3){
+        padding-right: 0.5em;
+        border-right: 1px solid var(--secondary-color);
+    } */
+
 }
 
 /* moves the menu on click */
@@ -78,12 +225,13 @@ body {
 
 .nav--links[data-visibility="hidden"]{
     transform: translateX(100%);
+    
 }
 
 @keyframes navLinkItemsFade {
     from {
         opacity: 0;
-        transform: translateX(3rem);
+        transform: translateX(50px);
     }
     to{
         opacity: 1;
@@ -93,61 +241,130 @@ body {
 
 
 .nav--links > li {
+    z-index: 1000;
     list-style: none;
 }
 
 .nav--links > li > a {
-    /* display: none; */
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 200;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--secondary-color);
+    color: var(--secondary-color);  
 }
 
 /* menu/burger */
-
 .nav--toggle{  
     cursor: pointer;
     z-index: 1000;
     border: 0;
     background: 0;
-    width: var(--burger-width);
-    aspect-ratio: 1;
-    /* border: 1px red solid; */
-    transition: 0.3s ease;
-    
-    /* burger aligning */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+    display: block;
 }
 
 /* menu lines */
 .nav--toggle > div{
-    
-    display: block;
-    width: 100%;
+    transition: all 0.2s ease;
+    width: var(--burger-width);
     height: var(--burger-line-height);
     background-color: var(--secondary-color);
-
-    transition: all 0.2s ease;
+    margin: calc(0.2*var(--burger-width));
 }
 
 /* line to x animation */
-
 .lineToggle .line1{
-    transform: rotate(45deg)
-    translateY(calc(0.2*var(--burger-width)))
-    translateX(calc(0.15*var(--burger-width))); 
+    border: 0px solid red;
+    transform: rotate(45deg) 
+    translateX(10px)
+    translateY(11px);
+    /* 
+    translateX(burgerwidth*0.2)
+    translateY(line height*2); 
+    */
 }
 .lineToggle .line2{
     opacity: 0;
 }
 .lineToggle .line3{
+    border: 0px solid green;
     transform: rotate(-45deg)
-    translateY(calc(-0.2*var(--burger-width)))
-    translateX(calc(0.15*var(--burger-width)));
+    translateX(7px)
+    translateY(-8px);
+    /* 
+    translateX(burgerwidth*0.2)
+    translateY(-line height*2); 
+    */
+}
+
+/* content / text / main body */
+.content-container{
+    grid-area: content;
+    /* grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    row-gap: 1rem; */
+    padding-inline: 2.5vw;
+    /* grid-template-areas:
+    "img1 . img2"
+    "content content content"; */
+}
+
+/* grid for images */
+.grid-container{
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); */
+}
+
+.content-text{
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+/* text for pc */
+@media only screen and (min-width: 768px) {
+    .content-text{
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: space-around;
+        align-items: center;
+    }    
+}
+
+/* for text sizes use clamp! ------------------------------------------------------------- !*/
+
+.content-text > p{
+    width: 300px;
+    height: auto;
+}
+
+.headline-text{
+    font-family: "Moniqa";
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* images */
+/* .img-responsive{
+    width: 45vw;
+    height: auto;
+} */
+/* .div-images{
+    background-repeat: no-repeat;
+    height: 500px;
     
+}
+
+#img1{
+    background-image: url(./images/temp-image-2.jpg);
+}
+
+#img2{
+    background-image: url(./images/temp-image-3.jpg);
+} */
+
+.footer{
+    grid-area: footer;
 }
