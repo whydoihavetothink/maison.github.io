@@ -23,6 +23,12 @@
     font-weight: normal;
 }
 
+@font-face {
+    font-family: "Moniqa Heading";
+    src: url(./fonts/Moniqa-BlackNarrowHeading.otf);
+    font-weight: normal;
+}
+
 :root {
     /* colors */
     --main-color: #4b5320;
@@ -63,6 +69,7 @@ body {
     position: relative;
     height: 100vh;
     width: 100vw;
+    overflow-y: hidden;
 }
 
 /* video background */
@@ -99,7 +106,7 @@ body {
         display: none;
     }
     .header-stack{
-        background-image: linear-gradient(rgba(75, 83, 32, 0.5), rgba(75, 83, 32, 0.5)), url(../images/temp-image-1.jpg) ;
+        background-image: linear-gradient(rgba(75, 83, 32, 0.5), rgba(75, 83, 32, 0.5)), url(./images/photos/temp-image-1.jpg) ;
         background-repeat: no-repeat;
         background-position: center top;
         object-fit: cover;
@@ -155,17 +162,16 @@ body {
 @media only screen and (min-width: 1275px) {
     .navbar{
         justify-content: unset;
-        position: relative;
     }
 
     .languages{
-        position: absolute;
+        position: fixed;
         left: 4rem;
         top: 4rem;
     }
         
    .maison-logo{
-        position: absolute;
+        position: fixed;
         left: 50%;
         top:1.2rem;
         transform: translateX(-50%);
@@ -175,7 +181,7 @@ body {
         all: unset;
         display: flex;
         flex-direction: row;
-        position: absolute;
+        position: fixed;
         right: 15vw;
         top: 4rem;
         gap: 2em;
@@ -298,72 +304,63 @@ body {
 /* content / text / main body */
 .content-container{
     grid-area: content;
-    /* grid-template-columns: 1fr 1fr 1fr;
-    display: grid;
-    row-gap: 1rem; */
-    padding-inline: 2.5vw;
-    /* grid-template-areas:
-    "img1 . img2"
-    "content content content"; */
+    padding-inline: 4vw;
 }
 
 /* grid for images */
-.grid-container{
+.img-text-container{
+    margin-bottom: 3rem;
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "item1 item2";
     /* grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); */
 }
 
-.content-text{
-    grid-area: content;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
-    text-align: center;
-    color: var(--secondary-color);
+.image-responsive{
+    width: 40vw;
 }
-
-/* text for pc */
-@media only screen and (min-width: 768px) {
-    .content-text{
-        flex-direction: row;
-        gap: 1rem;
-        justify-content: space-around;
-        align-items: center;
-    }    
+#img1 {
+    grid-area: item1;
+}
+#img2{
+    grid-area: item2;
 }
 
 /* for text sizes use clamp! ------------------------------------------------------------- !*/
-
-.content-text > p{
-    width: 300px;
-    height: auto;
+.text-container{
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
-
-.headline-text{
-    font-family: "Moniqa";
-    font-weight: bold;
+.text-container > h1{
     text-transform: uppercase;
+    font-family: Moniqa Heading;
+    letter-spacing: 0.5rem;
+}
+.text-container > p{
+    text-align: center;
+}
+#text1{
+    grid-area: item2;
+}
+#text2{
+    grid-area: item1;
 }
 
-/* images */
-/* .img-responsive{
-    width: 45vw;
-    height: auto;
-} */
-/* .div-images{
-    background-repeat: no-repeat;
-    height: 500px;
-    
+/* small social icons fixed position left down */
+.socials{
+    position: fixed;
+    bottom: 3rem;
+    left: 5rem;
+    display: flex;
+    gap: 1rem;
 }
 
-#img1{
-    background-image: url(./images/temp-image-2.jpg);
-}
-
-#img2{
-    background-image: url(./images/temp-image-3.jpg);
-} */
 
 .footer{
     grid-area: footer;
