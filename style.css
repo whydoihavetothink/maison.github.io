@@ -176,7 +176,7 @@ body {
 
 #language-logo-container{
     position: fixed;
-    bottom: 5vh;
+    bottom: 20vh;
     justify-content: space-between;
     height: 12vh;
 }
@@ -366,6 +366,7 @@ body {
     row-gap: 3rem;
     justify-content: center;
     align-items: center;
+    text-align: center;
     color: white;
 }
 .text-container > h1{
