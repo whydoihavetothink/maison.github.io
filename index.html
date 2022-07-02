@@ -17,13 +17,16 @@
         <!-- navigation bar -->
         <header class="header-stack">
             <span class="socials">
-                <a href="#"><img src="./images/socials/instagram.png" alt="instagram icon"></a>
-                <a href="#"><img src="./images/socials/facebook.png" alt="facebook icon"></a>
+                <a href="#"><img class="pc-visible" src="./images/socials/instagram.png" alt="instagram icon"></a>
+                <a href="#"><img class="pc-visible" src="./images/socials/facebook.png" alt="facebook icon"></a>
             </span>
             
             <nav  class="navbar">      
-                <span class="languages"> <a href="#">CZ</a> <a href="#">EN</a></span>
-                <a id = "logo" href="#"><img class = "maison-logo" src="./images/logo/Maison logo gold.png" alt="Maison Logo" href/></a>
+                <span id="languages-pc" class="languages pc-visible">
+                     <a class="language-link pc-visible" href="#">CZ</a> 
+                     <a class="language-link pc-visible" href="#">EN</a>
+                </span>
+                <a id = "logo" href="#"><img class = "maison-logo" src="./images/logo/Maison logo gold 1.png" alt="Maison Logo" href/></a>
                 <ul data-visibility = "hidden" class="nav--links">
                     <li>
                         <a href="#">Menu</a>
@@ -31,6 +34,13 @@
                     <li>
                         <a href="#">Gallery</a>
                     </li>
+                    <div id="language-logo-container"class="phone-visible flex-column">
+                        <span class="languages phone-visible">
+                            <a class="language-link phone-visible" href="#">CZ</a>
+                            <a class="language-link phone-visible" href="#">EN</a>
+                        </span>
+                        <img id="maison-logo-small" class="phone-visible" src="./images/logo/M logo gold small.png" alt="maison logo"/>
+                    </div>
                 </ul>
 
                 <!-- onclick = "toggleNav()" -->
@@ -65,11 +75,28 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tempora nemo corrupti dignissimos earum vero similique perferendis. Odio magni rerum dolor ducimus eaque nam, saepe, fuga, vitae quae quasi earum?</p>
                 </div>
             </div>
+
+            <!-- <div id = "drink-menu" class= "text-over-image">
+                <a href="#">discover our drinks</a>
+            </div> -->
         </div>
 
-        <footer class="footer">
-            <h1>footer</h1>
-        </footer>
+        <!-- <footer class="footer-grid">
+            <div id="adress">
+                <img src="./images/logo/Maison logo gold 1.png" alt="">
+                <p>Běhounská 9, 602 00 Brno-střed-Brno-město, Česko</p>
+            </div>
+            <div id="contact">
+                <p>CONTACT US</p>
+                <p>+420 620 060 200</p>
+                <p>info@maisonclublounge.cz</p>
+            </div>
+            <div id="opening-hours">
+                <p>OPENING HOURS</p>
+                <p>Wednesday & Thursday<br>17:00 – 02:00</p>
+                <p>Friday & Saturday<br>21:00 – 05:00</p>
+            </div>
+        </footer> -->
         <!-- MENU toggle script -->
             <script src="App.js"></script> 
     </main>  
