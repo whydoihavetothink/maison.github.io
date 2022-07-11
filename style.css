@@ -2,7 +2,7 @@
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
 * Autoprefixer: v10.4.7
-* Browsers: last 2 version
+* Browsers: last 4 version
 */
 
 /* fonts */
@@ -96,6 +96,7 @@ body {
     bottom: 1rem;  
     left:50%;
     -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
             transform: translateX(-50%);
     display: -webkit-box;
     display: -ms-flexbox;
@@ -158,6 +159,7 @@ body {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     position: absolute;
     width: 100vw;
@@ -188,6 +190,8 @@ body {
     }
     .header-stack{
         background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(75, 83, 32, 0.5)), to(rgba(75, 83, 32, 0.5))),
+        url(./images/photos/temp-image-1.jpg);
+        background-image: -o-linear-gradient(rgba(75, 83, 32, 0.5), rgba(75, 83, 32, 0.5)),
         url(./images/photos/temp-image-1.jpg);
         background-image: linear-gradient(rgba(75, 83, 32, 0.5), rgba(75, 83, 32, 0.5)),
         url(./images/photos/temp-image-1.jpg);
@@ -246,6 +250,7 @@ body {
     -webkit-backdrop-filter: blur(1.5px);
             backdrop-filter: blur(1.5px);
     -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     overflow-x: hidden;
 }
@@ -319,6 +324,7 @@ body {
         left: 50%;
         top: 1.2rem;
         -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
                 transform: translateX(-50%);
    }
 
@@ -344,6 +350,7 @@ body {
     /* hover effect */
     .nav--links > li > a{
         -webkit-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
         transition: 0.3s ease;
     }
 
@@ -353,6 +360,7 @@ body {
 
     .languages > a{
         -webkit-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
         transition: 0.3s ease;
     }
 
@@ -364,11 +372,13 @@ body {
 /* moves the menu on click */
 .nav--links[data-visibility="visible"]{
     -webkit-transform: translateX(0%);
+        -ms-transform: translateX(0%);
             transform: translateX(0%);
 }
 
 .nav--links[data-visibility="hidden"]{
     -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
             transform: translateX(100%);
     
 }
@@ -424,6 +434,7 @@ body {
 /* menu lines */
 .nav--toggle > div{
     -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
     width: var(--burger-width);
     height: var(--burger-line-height);
@@ -438,6 +449,10 @@ body {
     
     translateX(calc(var(--burger-width)*0.24))
     translateY(calc(var(--burger-line-height)*1.8));
+        -ms-transform: rotate(45deg) 
+    
+    translateX(calc(var(--burger-width)*0.24))
+    translateY(calc(var(--burger-line-height)*1.8));
             transform: rotate(45deg) 
     
     translateX(calc(var(--burger-width)*0.24))
@@ -448,6 +463,10 @@ body {
 }
 .lineToggle .line3{
     -webkit-transform: rotate(-45deg)
+
+    translateX(calc((var(--burger-width)*0.24)))
+    translateY(calc(-1.82*var(--burger-line-height)));
+        -ms-transform: rotate(-45deg)
 
     translateX(calc((var(--burger-width)*0.24)))
     translateY(calc(-1.82*var(--burger-line-height)));
@@ -609,9 +628,7 @@ body {
 
 .footer-grid{
     -ms-grid-row: 5;
-        grid-row:5;
     -ms-grid-column: 1;
-        grid-column: 1;
     grid-area: footer;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -660,3 +677,5 @@ body {
         display: none;
     }
 }
+
+/* AFTERCSS ADD CSSNANO AND PREFIXES */
