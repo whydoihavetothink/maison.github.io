@@ -63,6 +63,42 @@ body {
     background-color: var(--main-color);
 }
 
+/* ICONS */
+.pc-icon{
+    width: 25px;
+    height: auto;
+}
+
+#icons-container{
+    z-index: 900;
+    border: 3px solid var(--secondary-color);
+    border-radius: 14px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    position: fixed;
+    padding-inline: 0.5rem;
+    width: 80vw;
+    bottom: 5rem;  
+    left:50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.vertical-line{
+    position: relative;
+    display: inline-block;
+    border-left: 3px solid var(--secondary-color);
+    
+    height: 3rem;
+}
+
+.phone-icon{
+    display: unset;
+}
+
+
 /* main grid container setting */
 .grid-container{
     display: grid;
@@ -128,7 +164,7 @@ body {
 
 .navbar {
     /* general */
-    z-index: 900;
+    z-index: 999;
     background: 0;
     display: flex;
     align-items: center;
@@ -196,6 +232,10 @@ body {
 
 /* for pc screen navbar*/
 @media only screen and (min-width: 767px) {
+    #icons-container{
+        border: none;
+    }
+
     .pc-visible{
         display: inherit;
     }
