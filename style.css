@@ -35,8 +35,8 @@
     --secondary-color: #d6a559;  
 
     /* burger/menu */
-    --burger-width: 46px;
-    --burger-line-height: 4px;
+    --burger-width: 30px; /*46px*/
+    --burger-line-height: 3px; /*4px*/
 }
 
 *{
@@ -96,6 +96,8 @@ body {
 
 .phone-icon{
     display: unset;
+    height: 24px;
+    width: auto;
 }
 
 
@@ -168,9 +170,9 @@ body {
     background: 0;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding-top: 2rem;
-    height: 15vh;
+    padding-inline: 2.2rem;
+    justify-content: space-between;
+    height: 10vh;
     width: 100%;
 }
 
@@ -352,24 +354,24 @@ body {
 /* line to x animation */
 .lineToggle .line1{
     transform: rotate(45deg) 
-    translateX(10px)
-    translateY(11px);
-    /* 
-    translateX(burgerwidth*0.2)
-    translateY(line height*2); 
-    */
+    /* translateX(10px)
+    translateY(11px); */
+    
+    translateX(calc(var(--burger-width)*0.2))
+    translateY(calc(var(--burger-line-height)*2)); 
+   
 }
 .lineToggle .line2{
     opacity: 0;
 }
 .lineToggle .line3{
     transform: rotate(-45deg)
-    translateX(7px)
-    translateY(-8px);
-    /* 
-    translateX(burgerwidth*0.2)
-    translateY(-line height*2); 
-    */
+    /* translateX(7px)
+    translateY(-8px); */
+    
+    translateX(calc((var(--burger-width)*0.2)))
+    translateY(calc(var(--burger-line-height)*2)); 
+   
 }
 
 /* content / text / main body */
