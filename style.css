@@ -77,7 +77,7 @@ body {
     position: fixed;
     padding-inline: 0.5rem;
     width: 80vw;
-    bottom: 5rem;  
+    bottom: 1rem;  
     left:50%;
     transform: translateX(-50%);
     display: flex;
