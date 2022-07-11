@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 /* fonts */
 @font-face {
     font-family: "Bigilla";
@@ -50,23 +43,15 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     /* outline: 1px solid red; */
 }
 
 /* GENERAL CLASSES */
 .flex-column{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .fixed-position{
@@ -88,29 +73,17 @@ body {
     z-index: 900;
     border: 3px solid var(--secondary-color);
     border-radius: 14px;
-    -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     position: fixed;
     padding-inline: 0.5rem;
     width: 80vw;
     bottom: 1rem;  
     left:50%;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
-    display: -webkit-box;
-    display: -ms-flexbox;
+    transform: translateX(-50%);
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .vertical-line{
@@ -129,13 +102,10 @@ body {
 
 /* main grid container setting */
 .grid-container{
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     row-gap: 10vh;
-    -ms-grid-rows: auto 10vh auto 10vh auto;
-        grid-template-areas: 
+    grid-template-areas: 
     "header"
     "content"
     "footer";
@@ -143,8 +113,6 @@ body {
 
 /* header container includes navbar bg video and image */
 .header-stack{
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
     grid-area: header;
     position: relative;
     height: 100vh;
@@ -158,14 +126,11 @@ body {
     z-index: -100;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     position: absolute;
     width: 100vw;
     height: 100vh;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
 }
 
 /* aspect ratio for video */
@@ -189,10 +154,6 @@ body {
         display: none;
     }
     .header-stack{
-        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(75, 83, 32, 0.5)), to(rgba(75, 83, 32, 0.5))),
-        url(./images/photos/temp-image-1.jpg);
-        background-image: -o-linear-gradient(rgba(75, 83, 32, 0.5), rgba(75, 83, 32, 0.5)),
-        url(./images/photos/temp-image-1.jpg);
         background-image: linear-gradient(rgba(75, 83, 32, 0.5), rgba(75, 83, 32, 0.5)),
         url(./images/photos/temp-image-1.jpg);
         background-repeat: no-repeat;
@@ -206,16 +167,10 @@ body {
     /* general */
     z-index: 999;
     background: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     padding-inline: 2rem;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     height: 10vh;
     width: 100%;
 }
@@ -235,20 +190,12 @@ body {
     height: 100vh;   
     width: 100%;
     background-color: rgba(75, 83, 32,.9);
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     padding-top: 25vh;
     gap: 4em;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-backdrop-filter: blur(1.5px);
-            backdrop-filter: blur(1.5px);
+    align-items: center;
+    backdrop-filter: blur(1.5px);
     transition: all 0.5s ease;
     overflow-x: hidden;
 }
@@ -260,8 +207,6 @@ body {
 }  
 
 .languages{
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
     gap: 1rem;
 }
@@ -269,9 +214,7 @@ body {
 #language-logo-container{
     position: fixed;
     bottom: 20vh;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     height: 12vh;
 }
 
@@ -302,9 +245,7 @@ body {
     }
 
     .navbar{
-        -webkit-box-pack: unset;
-            -ms-flex-pack: unset;
-                justify-content: unset;
+        justify-content: unset;
     } 
 
     .languages{
@@ -321,20 +262,13 @@ body {
         position: fixed;
         left: 50%;
         top: 1.2rem;
-        -webkit-transform: translateX(-50%);
-            -ms-transform: translateX(-50%);
-                transform: translateX(-50%);
+        transform: translateX(-50%);
    }
 
     .nav--links{
         all: unset;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row;
+        flex-direction: row;
         position: fixed;
         right: 15rem;
         top: 4rem;
@@ -365,41 +299,22 @@ body {
 
 /* moves the menu on click */
 .nav--links[data-visibility="visible"]{
-    -webkit-transform: translateX(0%);
-        -ms-transform: translateX(0%);
-            transform: translateX(0%);
+    transform: translateX(0%);
 }
 
 .nav--links[data-visibility="hidden"]{
-    -webkit-transform: translateX(100%);
-        -ms-transform: translateX(100%);
-            transform: translateX(100%);
+    transform: translateX(100%);
     
-}
-
-@-webkit-keyframes navLinkItemsFade {
-    from {
-        opacity: 0;
-        -webkit-transform: translateX(50px);
-                transform: translateX(50px);
-    }
-    to{
-        opacity: 1;
-        -webkit-transform: translateX(0px);
-                transform: translateX(0px);
-    }
 }
 
 @keyframes navLinkItemsFade {
     from {
         opacity: 0;
-        -webkit-transform: translateX(50px);
-                transform: translateX(50px);
+        transform: translateX(50px);
     }
     to{
         opacity: 1;
-        -webkit-transform: translateX(0px);
-                transform: translateX(0px);
+        transform: translateX(0px);
     }
 }
 
@@ -437,15 +352,7 @@ body {
 
 /* line to x animation */
 .lineToggle .line1{
-    -webkit-transform: rotate(45deg) 
-    
-    translateX(calc(var(--burger-width)*0.24))
-    translateY(calc(var(--burger-line-height)*1.8));
-        -ms-transform: rotate(45deg) 
-    
-    translateX(calc(var(--burger-width)*0.24))
-    translateY(calc(var(--burger-line-height)*1.8));
-            transform: rotate(45deg) 
+    transform: rotate(45deg) 
     
     translateX(calc(var(--burger-width)*0.24))
     translateY(calc(var(--burger-line-height)*1.8)); 
@@ -454,15 +361,7 @@ body {
     opacity: 0;
 }
 .lineToggle .line3{
-    -webkit-transform: rotate(-45deg)
-
-    translateX(calc((var(--burger-width)*0.24)))
-    translateY(calc(-1.82*var(--burger-line-height)));
-        -ms-transform: rotate(-45deg)
-
-    translateX(calc((var(--burger-width)*0.24)))
-    translateY(calc(-1.82*var(--burger-line-height)));
-            transform: rotate(-45deg)
+    transform: rotate(-45deg)
 
     translateX(calc((var(--burger-width)*0.24)))
     translateY(calc(-1.82*var(--burger-line-height)));  
@@ -470,23 +369,17 @@ body {
 
 /* content / text / main body */
 .content-container{
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
     grid-area: content;
 }
 
 /* grid for images and text */
 .img-text-container{
     margin-bottom: 3rem;
-    display: -ms-grid;
     display: grid;
     justify-items: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-grid-columns: 1fr 1fr;
+    align-items: center;
     grid-template-columns: 1fr 1fr;
-        grid-template-areas: 
+    grid-template-areas: 
     "item1 item2";
 }
 
@@ -494,33 +387,20 @@ body {
     width: 40vw;
 }
 #img1 {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
     grid-area: item1;
 }
 #img2{
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
     grid-area: item2;
 }
 
 /* for text sizes use clamp! ------------------------------------------------------------- !*/
 .text-container{
     width: 40vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     row-gap: 3rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     color: white;
 }
@@ -533,26 +413,16 @@ body {
     text-align: center;
 }
 #text1{
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
     grid-area: item2;
 }
 #text2{
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
     grid-area: item1;
 }
 
 .text-over-image{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     background-position: center;
     background-repeat: no-repeat;
@@ -577,13 +447,8 @@ body {
 /* for mobile layout */
 @media only screen and (max-width: 767px) {
     .img-text-container{
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        flex-direction: column;
         gap: 2rem;
     }
 
@@ -612,57 +477,33 @@ body {
     position: fixed;
     bottom: 3rem;
     left: 5rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     gap: 1rem;
 }
 
 .footer-grid{
-    -ms-grid-row: 5;
-    -ms-grid-column: 1;
     grid-area: footer;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     margin-bottom: 10rem;
 }
 .footer-grid > div{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     width: 12rem;
     height: 12rem;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     text-align: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    justify-content: space-evenly;
     color: var(--secondary-color);
 }
 
 /* for mobile layout */
 @media only screen and (max-width: 767px) {
     .footer-grid{
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        flex-direction: column;
         gap: 4rem;
     }
     #contact{
