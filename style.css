@@ -47,11 +47,30 @@
     /* outline: 1px solid red; */
 }
 
+#preloader-container {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--main-color);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* GENERAL CLASSES */
 .flex-column{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.flex-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .fixed-position{
@@ -177,11 +196,9 @@ body {
 
 /* maison logo */
 .maison-logo{
-    /* resizing to smaller image */
-    width: auto;
-    height: max(6rem, 8vw);
+    width: 11rem;
+    height: auto;
 }
-
 /* for phones */
 .nav--links{
     position: fixed;
@@ -209,6 +226,7 @@ body {
 .languages{
     display: inline-flex;
     gap: 1rem;
+    transition: all 0.3s ease;
 }
 
 #language-logo-container{
@@ -258,7 +276,7 @@ body {
         top: 4rem;
     }
 
-   .maison-logo{
+    #navbar-logo{
         position: fixed;
         left: 50%;
         top: 1.2rem;
@@ -426,23 +444,71 @@ body {
     text-align: center;
     background-position: center;
     background-repeat: no-repeat;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
     background-size: cover;
 }
 
-.text-over-image > a {
-    text-decoration: none;
-    color: white;
-}
+
 
 #drink-menu{
     height: 45vh;
-    /* background-color: #d6a559; */
-    background-image: url(./images/photos/temp-image-4.jpg);
+    background-color: #d6a559;
+    margin-bottom: 4rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/photos/temp-image-4.jpg);/* linear-gradient(rgba(75, 83, 32, 0.5), rgba(75, 83, 32, 0.5))*/
+    min-height: 150px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     
 }
+#drink-menu > a {
+    text-decoration: none;
+    color: white;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.instagram-container{
+    position: absolute;
+    width: 90vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.instagram-container p{
+    color: var(--secondary-color);
+}
+
+.instagram-container img{
+    width: 306px;
+    height: 306px;
+}
+
+#instagram-button{
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+    align-items: center;
+    width: 10rem;
+    height: 2rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 14px;
+}
+
+/* only in instagram button */
+#instagram-icon{
+    height: 20px;
+    width: auto;
+}
+
+@media only screen and (max-device-width: 1366px) {
+    #drink-menu {
+      background-attachment: scroll;
+    }
+  }
 
 /* for mobile layout */
 @media only screen and (max-width: 767px) {
@@ -490,14 +556,28 @@ body {
     margin-bottom: 10rem;
 }
 .footer-grid > div{
+    /* outline: 1px solid red; */
     display: flex;
     flex-direction: column;
     width: 12rem;
-    height: 12rem;
-    align-items: center;
+    height: 8rem;
     text-align: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     color: var(--secondary-color);
+    line-height: 1.6rem;
+}
+
+#adress{
+    width: 9rem;
+    height: 8.2rem;
+    transform: translateY(-3.7rem);
+}
+#contact{
+    /* height: 6rem; */
+    transform: translateY(-1rem);
+}
+#opening-hours{
+    height: 10rem;
 }
 
 /* for mobile layout */

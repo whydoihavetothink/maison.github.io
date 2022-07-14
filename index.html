@@ -7,11 +7,16 @@
     <title>Maison</title>
 
     <link rel="stylesheet" href="style.css" type="text/css" media="all" />
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
  </head>
 
 <!-- website contents -->
  <body>
+    <!-- preloader -->
+    <div id = "preloader-container">
+        <img class="maison-logo" src="./images/logo/Maison logo gold 1.png" alt="Maison Logo"/>
+    </div>
+
         <!-- mobile information bar -->
         <ul id="icons-container" class="phone-visible">
             <a href="instagram://user?username=maisonclublounge">
@@ -35,15 +40,15 @@
         <header class="header-stack">
             <!-- social media on pc -->
         <span class="socials">
-                <a href="#"><img class="pc-visible pc-icon" src="./images/icons/Instagram_icon.png" alt="instagram icon"></a>
-                <a href="#"><img class="pc-visible pc-icon" src="./images/icons/Facebook_icon.png" alt="facebook icon"></a>
+                <a href="https://www.instagram.com/maisonclublounge/" target="_blank"><img class="pc-visible pc-icon" src="./images/icons/Instagram_icon.png" alt="instagram icon"></a>
+                <a href="https://www.facebook.com/maisonclublounge/"><img class="pc-visible pc-icon" src="./images/icons/Facebook_icon.png" alt="facebook icon"></a>
         </span>
             <nav  class="navbar">      
                 <span id="languages-pc" class="languages pc-visible">
                      <a class="language-link pc-visible" href="#">CZ</a> 
                      <a class="language-link pc-visible" href="#">EN</a>
                 </span>
-                <a id = "logo" href="#"><img class = "maison-logo" src="./images/logo/Maison logo gold 1.png" alt="Maison Logo" href/></a>
+                <a id = "logo" href="#"><img id="navbar-logo" class = "maison-logo" src="./images/logo/Maison logo gold 1.png" alt="Maison Logo" href/></a>
                 <ul data-visibility = "hidden" class="nav--links">
                     <li>
                         <a href="#">Menu</a>
@@ -96,9 +101,22 @@
             <!-- <div id = "drink-menu" class= "text-over-image">
                 <a href="#">discover our drinks</a>
             </div> -->
+
+            <!-- instagram -->
+            <!-- <div class="instagram-container pc-visible">
+                <div class="flex-between">
+                    <p>maisonclublounge</p>
+                    <a href="https://www.instagram.com/maisonclublounge/" target="_blank" id="instagram-button" class="flex-between">
+                        <img id="instagram-icon"src="./images/icons/Instagram_icon.png" alt="instagram"> <p>FOLLOW US</p>
+                    </a>
+                </div>
+            </div> -->
+
         </div>
 
-        <!-- <footer class="footer-grid">
+            
+
+        <footer class="footer-grid">
             <div id="adress">
                 <img src="./images/logo/Maison logo gold 1.png" alt="">
                 <p>Běhounská 9, 602 00 Brno-střed-Brno-město, Česko</p>
@@ -113,7 +131,7 @@
                 <p>Wednesday & Thursday<br>17:00 – 02:00</p>
                 <p>Friday & Saturday<br>21:00 – 05:00</p>
             </div>
-        </footer> -->
+        </footer>
         <!-- MENU toggle script -->
             <script src="App.js"></script> 
     </main>  

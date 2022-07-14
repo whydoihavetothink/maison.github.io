@@ -5,11 +5,28 @@ var navLinkItems = document.querySelector(".nav--links li");
 var phoneIcons = document.querySelector(".phone-icons");
 var iconsContainer = document.querySelector("#icons-container");
 const body = document.querySelector("body");
+var languages = document.querySelector(".languages");
+var drinkMenu = document.querySelector("#drink-menu");
 
 const mainColor = "#4b5320";
 const secondaryColor = "#d6a559";
 
+// preloader
+$(window).on("load", function(){
+   $("#preloader-container").fadeOut("slow");
+ });
 
+// languages scroll disappear
+window.addEventListener("scroll", () => {
+    var y = window.scrollY;
+    if (y >= 600){
+        languages.style.top = "-4rem";
+        return;
+    }
+    else{
+      languages.style.top = "4rem";
+    }
+});
 
 navToggle.addEventListener("click", function(){
    // from burger to x toggle
